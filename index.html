@@ -169,11 +169,53 @@ a { color: inherit; text-decoration: none; }
 .reveal[data-delay="4"] { transition-delay: 0.32s; }
 
 /* ==========================================================
+   HUB BAR · 허브(link 페이지)로 복귀 — 본부 표준 복귀 바
+   ========================================================== */
+:root { --hub-h: 40px; } /* 복귀 바 높이. 헤더/hero를 이만큼 내림 */
+
+.hub-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101; /* 헤더(100)보다 위 — 항상 맨 위에 고정 */
+  height: var(--hub-h);
+  background: var(--navy-deep);
+  border-bottom: 1px solid var(--navy-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 var(--gutter);
+}
+.hub-bar a.hub-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--gold);
+  transition: opacity 0.2s var(--ease);
+}
+.hub-bar a.hub-back:hover { opacity: 0.75; }
+.hub-bar .hub-list {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--gray-soft);
+}
+/* 헤더를 복귀 바 높이만큼 아래로 — 겹침 방지 (원본 .site-header top 값에 반영) */
+/* hero 첫 화면도 복귀 바 높이만큼 보정 */
+.hero { padding-top: calc(140px + var(--hub-h)); }
+@media (max-width: 380px) {
+  .hub-bar .hub-list { display: none; } /* 좁은 화면에선 우측 안내 숨김 */
+}
+
+/* ==========================================================
    HEADER
    ========================================================== */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: var(--hub-h); left: 0; right: 0;
   z-index: 100;
   padding: 18px var(--gutter);
   display: flex;

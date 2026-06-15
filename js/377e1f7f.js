@@ -96,16 +96,23 @@ function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header className={"site-header" + (scrolled ? " scrolled" : "")}>
-      <a href="#top" className="brand">
-        <img className="brand-mark" src={(window.__resources && window.__resources.logoWhite) || "assets/logo-white.png"} alt="PIVOT410" />
-        <span className="brand-text">
-          <span className="main">PIVOT410 STUDIO</span>
-          <span className="branch">HUFS BRANCH · 외대점</span>
-        </span>
-      </a>
-      <a href="#contact" className="nav-cta">상담 신청 →</a>
-    </header>
+    <>
+      {/* 허브(link 페이지)로 복귀하는 본부 표준 바 */}
+      <div className="hub-bar">
+        <a className="hub-back" href="https://link.pivotstudio.kr">← 전체 클래스 보기</a>
+        <span className="hub-list">아이돌 · 입시 · 키즈 · 취미</span>
+      </div>
+      <header className={"site-header" + (scrolled ? " scrolled" : "")}>
+        <a href="#top" className="brand">
+          <img className="brand-mark" src={(window.__resources && window.__resources.logoWhite) || "assets/logo-white.png"} alt="PIVOT410" />
+          <span className="brand-text">
+            <span className="main">PIVOT410 STUDIO</span>
+            <span className="branch">HUFS BRANCH · 외대점</span>
+          </span>
+        </a>
+        <a href="#contact" className="nav-cta">상담 신청 →</a>
+      </header>
+    </>
   );
 }
 
