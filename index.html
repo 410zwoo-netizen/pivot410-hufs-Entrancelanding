@@ -1457,6 +1457,42 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   color: var(--gray-soft);
 }
+.entrance-contact-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 2px;
+}
+.entrance-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.entrance-contact-btn:hover {
+  transform: translateY(-2px);
+}
+.entrance-contact-kakao {
+  background: #FEE500;
+  color: #181600;
+}
+.entrance-contact-kakao:hover {
+  box-shadow: 0 6px 18px rgba(254, 229, 0, 0.3);
+}
+.entrance-contact-call {
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+}
+.entrance-contact-call:hover {
+  background: rgba(245, 200, 75, 0.1);
+}
 
 /* ==========================================================
    FINAL CTA
